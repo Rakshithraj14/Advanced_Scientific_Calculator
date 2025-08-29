@@ -27,12 +27,12 @@ A modern, responsive scientific calculator built with HTML, CSS, and JavaScript.
 
 ```
 Advanced Scientific Calculator/
-├── index.html          # Main HTML file
+├── index.html          
 ├── css/
-│   └── styles.css      # All CSS styling
+│   └── styles.css      
 ├── js/
-│   └── calculator.js   # Calculator functionality
-└── README.md           # This file
+│   └── calculator.js   
+└── README.md           
 ```
 
 ## Usage
