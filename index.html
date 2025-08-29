@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    
+    <!-- Background Video -->
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="assets/calculator.mp4.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Background Overlay -->
+    <div class="bg-overlay"></div>
+    
+    <div class="calculator-header">
+        <h1 class="calculator-title">Advanced Scientific Calculator</h1>
+    </div>
+    
+    <div class="calculator">
+        <div class="display-container">
+            <div class="history" id="history"></div>
+            <div class="display" id="display">0</div>
+            <div class="memory-display">
+                <span id="memoryStatus">M: 0</span>
+                <span class="angle-mode" id="angleMode">DEG</span>
+            </div>
+        </div>
+
+        <div class="mode-toggle">
+            <button class="mode-btn active" onclick="toggleMode('basic')">Basic</button>
+            <button class="mode-btn" onclick="toggleMode('scientific')">Scientific</button>
+        </div>
+
+        <div class="buttons-grid">
+            <!-- Row 1 -->
+            <button class="btn special" onclick="clearAll()">AC</button>
+            <button class="btn special" onclick="clearEntry()">CE</button>
+            <button class="btn special" onclick="backspace()">⌫</button>
+            <button class="btn operator" onclick="appendOperator('/')">÷</button>
+            <button class="btn function" onclick="memoryRecall()">MR</button>
+            <button class="btn function" onclick="memoryClear()">MC</button>
+
+            <!-- Row 2 -->
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn operator" onclick="appendOperator('*')">×</button>
+            <button class="btn function" onclick="memoryAdd()">M+</button>
+            <button class="btn function" onclick="memorySubtract()">M-</button>
+
+            <!-- Row 3 -->
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn operator" onclick="appendOperator('-')">−</button>
+            <button class="btn function" onclick="calculateSquareRoot()">√</button>
+            <button class="btn function" onclick="calculateSquare()">x²</button>
+
+            <!-- Row 4 -->
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn operator" onclick="appendOperator('+')">+</button>
+            <button class="btn function" onclick="calculatePercentage()">%</button>
+            <button class="btn function" onclick="calculateReciprocal()">1/x</button>
+
+            <!-- Row 5 -->
+            <button class="btn" onclick="toggleSign()">±</button>
+            <button class="btn" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendDecimal()">.</button>
+            <button class="btn equals" onclick="calculate()">=</button>
+            <button class="btn function" onclick="insertPi()">π</button>
+            <button class="btn function" onclick="insertE()">e</button>
+        </div>
+
+        <div class="advanced-functions hidden" id="advancedFunctions">
+            <button class="btn function advanced-btn" onclick="calculateSin()">sin</button>
+            <button class="btn function advanced-btn" onclick="calculateCos()">cos</button>
+            <button class="btn function advanced-btn" onclick="calculateTan()">tan</button>
+            <button class="btn function advanced-btn" onclick="toggleAngleMode()">DEG/RAD</button>
+
+            <button class="btn function advanced-btn" onclick="calculateAsin()">asin</button>
+            <button class="btn function advanced-btn" onclick="calculateAcos()">acos</button>
+            <button class="btn function advanced-btn" onclick="calculateAtan()">atan</button>
+            <button class="btn function advanced-btn" onclick="calculateFactorial()">n!</button>
+
+            <button class="btn function advanced-btn" onclick="calculateLog()">log</button>
+            <button class="btn function advanced-btn" onclick="calculateLn()">ln</button>
+            <button class="btn function advanced-btn" onclick="calculateExp()">e^x</button>
+            <button class="btn function advanced-btn" onclick="calculatePower()">x^y</button>
+
+            <button class="btn function advanced-btn" onclick="openParenthesis()">(</button>
+            <button class="btn function advanced-btn" onclick="closeParenthesis()">)</button>
+            <button class="btn function advanced-btn" onclick="calculateAbs()">|x|</button>
+            <button class="btn function advanced-btn" onclick="calculateRandom()">Rand</button>
+        </div>
+    </div>
+
+    <script src="js/calculator.js"></script>
+</body>
+</html>
